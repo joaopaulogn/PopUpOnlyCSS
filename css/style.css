@@ -1,0 +1,130 @@
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+/* RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #1e272e;
+
+    box-sizing: border-box;
+}
+
+/* POPUP */
+.popup {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    z-index: 2;
+
+    transition: all .2s .1s ease-out;
+}
+
+.popup__content {
+    display: flex;
+    height: 60rem;
+    width: 60%;
+    background-color: #d2dae2;
+    border-radius: 0.3rem;
+    box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, .2);
+}
+
+.popup__left {
+    width: 33.33333%;
+}
+
+.popup__right {
+    width: 66.66666%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 5rem;
+    background-color: #f53b57;
+}
+
+.popup__img {
+    display: block;
+    height: 50%;
+}
+
+.popup__text {
+    font-size: 1.4rem;
+    letter-spacing: 0.05rem;
+    line-height: 1.5;
+    color: #d2dae2;
+    margin-bottom: 6rem;
+
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: .1rem solid rgba(255, 255, 255, .1);
+
+    hyphens: auto;
+}
+
+/* HEADING */
+.heading-secondary {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #ffa801;
+    margin-bottom: 3rem;
+}
+
+/* BUTTON */
+.btn:link,
+.btn:visited {
+    width: 15rem;
+    padding: 1.5rem 2rem;
+    display: inline-block;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0.3rem;
+}
+
+.btn--orange {
+    background-color: #ffa801;
+    color: #1e272e;
+}
+
+.btn--centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn--grey {
+    background-color: #f53b57;
+    color: #d2dae2;
+}
+
+/* POPUP EFFECT */
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
